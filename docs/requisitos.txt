@@ -1,0 +1,26 @@
+REQUISITOS FUNCIONAIS (RF)
+
+RF-01: O sistema deve permitir cadastro de produtos
+RF-02: O sistema deve controlar validade dos produtos
+RF-03: O sistema deve registrar vendas
+RF-04: O sistema deve sincronizar estoque entre unidades
+RF-05: O sistema deve gerar pedidos de reposição automaticamente
+RF-06: O sistema deve gerar relatórios de vendas
+
+REQUISITOS NÃO FUNCIONAIS (RNF)
+
+RNF-01: O sistema deve responder em até 2 segundos
+RNF-02: O sistema deve funcionar offline
+RNF-03: O sistema deve utilizar criptografia de dados
+RNF-04: O sistema deve ser acessível via navegador
+RNF-05: O sistema deve suportar múltiplos usuários simultâneos
+RNF-06: O sistema deve manter logs de auditoria
+RNF-07: O sistema deve estar em conformidade com LGPD
+
+REGRAS DE NEGÓCIO (RN)
+
+RN-01: Produtos vencidos não podem ser vendidos
+RN-02: Apenas usuários autorizados podem cancelar vendas
+RN-03: O estoque mínimo deve gerar reposição automática
+RN-04: Toda venda deve ser registrada
+RN-05: O sistema deve bloquear operações sem login
