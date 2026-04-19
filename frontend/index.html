@@ -1,16 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema Lanche</title>
+</head>
+<body>
+
 <h1>Sistema Lanche</h1>
 
+<!-- CADASTRAR PRODUTO -->
 <input id="nome" placeholder="Nome do produto">
+<input id="preco" placeholder="Preço">
 <button onclick="enviar()">Cadastrar</button>
+
+<!-- LISTAR PRODUTOS -->
+<h2>Produtos:</h2>
+<ul id="lista"></ul>
+<button onclick="listar()">Listar Produtos</button>
 
 <script>
 function enviar(){
-  fetch('http://127.0.0.1:5000/produto', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({nome: document.getElementById('nome').value})
-  })
-  .then(res => res.json())
-  .then(data => alert(data.msg))
+    fetch('http://127.0.0.1:5000/produto', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            nome: document.getElementById('nome').value,
+            preco: document.getElementById('preco').value
+        })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.msg))
+}
+
+function listar(){
+    fetch('http://127.0.0.1:5000/produtos')
+    .then(res => res.json())
+    .then(data => {
+        let lista = document.getElementById('lista')
+        lista.innerHTML = ""
+
+        data.forEach(p => {
+            lista.innerHTML += `<li>${p.nome} - R$ ${p.preco}</li>`
+        })
+    })
 }
 </script>
+
+</body>
+</html>
