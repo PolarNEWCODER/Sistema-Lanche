@@ -24,3 +24,15 @@ RN-02: Apenas usuários autorizados podem cancelar vendas
 RN-03: O estoque mínimo deve gerar reposição automática
 RN-04: Toda venda deve ser registrada
 RN-05: O sistema deve bloquear operações sem login
+=============================================
+RF
+Cadastro de produtos
+Registro de vendas
+Controle de estoque
+RNF
+Sistema web
+Resposta rápida
+Segurança de dados
+RN
+Não vender produto vencido
+Usuário deve estar logado

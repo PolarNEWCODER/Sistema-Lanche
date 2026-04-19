@@ -1,2 +1,16 @@
 <h1>Sistema Lanche</h1>
-<p>Funcionando</p>
+
+<input id="nome" placeholder="Nome do produto">
+<button onclick="enviar()">Cadastrar</button>
+
+<script>
+function enviar(){
+  fetch('http://127.0.0.1:5000/produto', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({nome: document.getElementById('nome').value})
+  })
+  .then(res => res.json())
+  .then(data => alert(data.msg))
+}
+</script>
